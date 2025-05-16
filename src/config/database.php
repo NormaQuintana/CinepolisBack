@@ -2,8 +2,8 @@
 
 $host = 'localhost';
 $user = 'root';
-$password = 'P@ssw0rd1704';
-$database = 'cinepolis';
+$password = '1234567890';
+$database = 'Cinepolis';
 
 $conn = new mysqli($host, $user, $password, $database);
 

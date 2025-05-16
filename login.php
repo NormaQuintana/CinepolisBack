@@ -48,7 +48,7 @@
             document.getElementById('mensaje').textContent = data.message;
 
             if (data.status === 'success') {
-                window.location.href = "api/index.php"; // por ejemplo
+                window.location.href = ""; // Redirigir a la página principal
             }
         });
     </script>
