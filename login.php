@@ -12,7 +12,7 @@
         <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
             
             <div class="text-center mb-4">
-                <img src="/src/img/cine.png" alt="Cine Halconez" class="rounded-circle border" style="max-width: 150px; width: 100%; height: auto;">
+                <img src="/src/img/cine1.png" alt="Cine Halconez" class="rounded-circle border" style="max-width: 150px; width: 100%; height: auto;">
             </div>
             <h2 class="text-center mb-4">Iniciar Sesión</h2>
             <form id="loginForm">
