@@ -20,6 +20,26 @@ class Cartelera {
         
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    // Crear una nueva cartelera
+    public static function crearCartelera($id_cine, $id_pelicula, $fecha, $horario, $sala) {
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO cartelera (id_cine, id_pelicula, fecha, horario, sala) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("iisss", $id_cine, $id_pelicula, $fecha, $horario, $sala);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
+    }
+
+    // Actualizar una cartelera existente
+    public static function actualizarCartelera($id_cartelera, $id_cine, $id_pelicula, $fecha, $horario, $sala) {
+        global $conn;
+        $stmt = $conn->prepare("UPDATE cartelera SET id_cine = ?, id_pelicula = ?, fecha = ?, horario = ?, sala = ? WHERE id_cartelera = ?");
+        $stmt->bind_param("iisssi", $id_cine, $id_pelicula, $fecha, $horario, $sala, $id_cartelera);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
+    }
 }
 
-?> 
+?>
