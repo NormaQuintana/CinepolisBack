@@ -14,6 +14,9 @@ switch ($segments[0]) {
     case 'cartelera':
         include '../src/cartelera/index.php';
         break;
+    case 'boletos':
+        include '../src/boletos/index.php';
+        break;
     default:
         header("HTTP/1.1 404 Not Found");
         
