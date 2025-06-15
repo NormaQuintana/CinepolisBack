@@ -77,11 +77,10 @@ class PeliculaController {
         }
     }
 
-    public static function update() {
+    public static function update($id_pelicula) {
         $data = file_get_contents('php://input');
         $xml = simplexml_load_string($data);
 
-        $id_pelicula = (int)$xml->id_pelicula;
         $id_genero = (int)$xml->id_genero;
         $id_clasificacion = (int)$xml->id_clasificacion;
         $titulo = (string)$xml->titulo;
@@ -101,12 +100,9 @@ class PeliculaController {
         }
     }
 
-    public static function delete() {
+    public static function delete($id_pelicula) {
         $data = file_get_contents('php://input');
         $xml = simplexml_load_string($data);
-
-        $id_pelicula = (int)$xml->id_pelicula;
-
         if (PeliculaService::obtenerPeliculaPorId($id_pelicula) == null) {
             http_response_code(404);
             echo json_encode(['message' => 'Pelicula no encontrada']);
