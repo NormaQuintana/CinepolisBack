@@ -34,6 +34,12 @@ switch ($segments[0]) {
     case 'boletos':
         include '../src/boletos/index.php';
         break;
+    case 'generos':
+        include '../src/genero/index.php';
+        break;
+    case 'clasificaciones':
+        include '../src/clasificación/index.php';
+        break;
     default:
         header("HTTP/1.1 404 Not Found");
         
